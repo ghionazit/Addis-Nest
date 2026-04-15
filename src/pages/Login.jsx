@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-screen  bg-gray-50 flex items-center justify-center px-4">
 
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+      <div className="w-full max-w-md mt-20 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
 
         {/* Header */}
         <div className="text-center mb-8">
           <div className="text-4xl mb-2 text-[#087474]">🏠</div>
+
           <h2 className="text-2xl font-bold text-gray-800">
             Welcome Back
           </h2>
+
           <p className="text-gray-500 text-sm">
             Sign in to your AddisNest account
           </p>

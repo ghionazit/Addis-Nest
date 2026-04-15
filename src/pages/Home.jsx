@@ -122,7 +122,7 @@ export default function Home() {
               <div className="relative h-40 overflow-hidden">
                 <img
                   src={property.image}
-                  alt=""
+                  alt={property.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -162,8 +162,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ABOUT SECTION (NEW) */}
-      <div className="bg-white py-16 border-t">
+      {/* ABOUT SECTION */}
+      <div id="about" className="bg-white py-20 border-t">
         <div className="max-w-6xl mx-auto px-6 text-center">
 
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -203,15 +203,54 @@ export default function Home() {
         </div>
       </div>
 
-      {/* MAP */}
-      <div className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="bg-white p-4 rounded-2xl shadow-md border">
-          <Map />
-          <p className="text-xs text-gray-500 mt-3 text-center">
-            📍 Click markers to explore properties
-          </p>
+      {/* MAP + CARDS SIDE BY SIDE */}
+<div className="max-w-7xl mx-auto px-6 pb-16">
+  <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+
+    {/* LEFT: PROPERTY CARDS */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 auto-rows-fr">
+
+      {forRentProperties.map((property) => (
+        <div
+          key={property.id}
+          className="bg-[#0b3d3d] text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col"
+        >
+          <img
+            src={property.image}
+            alt={property.title}
+            className="h-36 w-full object-cover"
+          />
+
+          <div className="p-3 flex flex-col justify-between flex-1">
+            <div>
+              <h3 className="text-sm font-semibold">{property.title}</h3>
+              <p className="text-xs text-white/60 mt-1">
+                {property.location}
+              </p>
+            </div>
+
+            <div className="mt-3 flex justify-between items-center">
+              <span className="text-sm font-bold text-[#fbbf24]">
+                {property.price} ETB
+              </span>
+
+              <span className="text-xs text-white/60">
+                {property.bedrooms} Bed
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
+
+    </div>
+
+    {/* RIGHT: MAP */}
+    <div className="bg-white p-4 rounded-2xl shadow-md border h-full min-h-[300px]">
+      <Map />
+    </div>
+
+  </div>
+</div>
 
       {/* FOOTER */}
       <footer className="bg-[#0b3d3d] text-white py-12">

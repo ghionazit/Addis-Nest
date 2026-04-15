@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+
+  const handleScrollToAbout = () => {
+    const section = document.getElementById("about");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className="fixed w-full z-50 bg-[#0b3d3d]  border-white/10">
+    <nav className="fixed w-full z-50 bg-[#0b3d3d] border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Logo */}
@@ -19,16 +27,23 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-10 text-white/90 font-medium">
-          {["Home", "Properties", "About", "Contact"].map((item, index) => (
-            <Link
-              key={index}
-              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-              className="relative group transition"
-            >
-              {item}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#087474] transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
+          
+          <Link to="/" className="relative group">
+            Home
+          </Link>
+
+          <Link to="/properties" className="relative group">
+            Properties
+          </Link>
+
+          {/* About (scrolls) */}
+          <button
+            onClick={handleScrollToAbout}
+            className="relative group hover:text-white transition"
+          >
+            About
+          </button>
+
         </div>
 
         {/* Auth Buttons */}
@@ -40,7 +55,7 @@ export default function Navbar() {
           </Link>
 
           <Link to="/register">
-            <button className="px-5 py-2 rounded-full bg-[#fbbf24] text-white font-medium hover:bg-[#fbbf24] transition shadow-sm">
+            <button className="px-5 py-2 rounded-full bg-[#fbbf24] text-black font-medium hover:scale-105 transition">
               Sign Up
             </button>
           </Link>

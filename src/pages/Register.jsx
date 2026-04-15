@@ -86,6 +86,14 @@ export default function Register() {
             />
           </div>
 
+          {/* Checkbox */}
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <input type="checkbox" className="accent-[#087474]" />
+            <span>
+              I agree to the Terms and Privacy Policy
+            </span>
+          </div>
+
           {/* Button */}
           <button
             type="submit"
