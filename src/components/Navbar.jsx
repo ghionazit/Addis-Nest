@@ -1,9 +1,8 @@
-// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-100 shadow-sm">
+    <nav className="fixed w-full z-50 bg-[#0b3d3d]  border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Logo */}
@@ -11,15 +10,15 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-2 text-2xl font-semibold tracking-tight group"
         >
-          <span className="text-[#087474] text-3xl group-hover:scale-110 transition-transform">
+          <span className="text-[#fbbf24] text-3xl group-hover:scale-110 transition-transform">
             🏠
           </span>
-          <span className="text-gray-800">Addis</span>
-          <span className="text-[#087474]">Nest</span>
+          <span className="text-white">Addis</span>
+          <span className="text-[#fbbf24]">Nest</span>
         </Link>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-10 text-gray-600 font-medium">
+        <div className="hidden md:flex items-center gap-10 text-white/90 font-medium">
           {["Home", "Properties", "About", "Contact"].map((item, index) => (
             <Link
               key={index}
@@ -35,13 +34,13 @@ export default function Navbar() {
         {/* Auth Buttons */}
         <div className="flex items-center gap-3">
           <Link to="/login">
-            <button className="px-4 py-2 rounded-full text-gray-600 hover:text-[#087474] hover:bg-gray-100 transition-all duration-200">
+            <button className="px-4 py-2 rounded-full text-white/80 hover:text-white transition">
               Login
             </button>
           </Link>
 
           <Link to="/register">
-            <button className="px-5 py-2 rounded-full bg-[#087474] text-white font-medium shadow-sm hover:bg-[#066565] hover:shadow-md hover:scale-[1.03] transition-all duration-200">
+            <button className="px-5 py-2 rounded-full bg-[#fbbf24] text-white font-medium hover:bg-[#fbbf24] transition shadow-sm">
               Sign Up
             </button>
           </Link>

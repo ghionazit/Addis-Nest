@@ -33,213 +33,190 @@ const forRentProperties = [
     area: 40,
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500",
   },
-  {
-    id: 4,
-    title: "Modern 2BR Apartment",
-    location: "Bole, Addis Ababa",
-    price: "35,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: 120,
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500",
-  },
-  {
-    id: 5,
-    title: "Spacious Family Home",
-    location: "CMC, Addis Ababa",
-    price: "50,000",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 280,
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500",
-  },
-  {
-    id: 6,
-    title: "Modern Condo",
-    location: "Ayat, Addis Ababa",
-    price: "28,000",
-    bedrooms: 2,
-    bathrooms: 2,
-    area: 110,
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500",
-  },
 ];
 
 export default function Home() {
   return (
     <div className="bg-gray-50">
 
-      {/* HERO (CENTERED) */}
-      <div className="relative w-full h-[520px] md:h-[600px] overflow-hidden">
-        <img
-          src={bgImage}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      {/* HERO */}
+      <div className="bg-[#0b3d3d] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12">
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-[#087474]/40 to-transparent"></div>
+          <div className="lg:w-1/2">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+              Find Your Perfect Home in Addis Ababa{" "}
+              <span className="text-[#fbbf24]">Faster & Simpler</span>
+            </h1>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
-          
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Find Your Perfect Home in Ethiopia
-          </h1>
+            <p className="text-white/80 text-lg mb-10 max-w-lg">
+              Discover verified apartments, studios, and family homes with real photos and direct landlord contact.
+            </p>
 
-          <p className="text-white/80 text-lg mb-8 max-w-2xl">
-            Discover verified rental homes across Addis Ababa  simple, fast, and reliable.
-          </p>
+            <Link to="/properties">
+              <button className="bg-[#fbbf24] px-7 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg">
+                Explore Properties
+              </button>
+            </Link>
+          </div>
 
-          {/* Search Box */}
-          <div className="bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-5 w-full">
-            <div className="grid md:grid-cols-4 gap-3">
-
-              <div className="text-left">
-                <p className="text-xs text-gray-500 mb-1">Type</p>
-                <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
-                  For Rent
-                </div>
-              </div>
-
-              <div className="text-left">
-                <p className="text-xs text-gray-500 mb-1">Price</p>
-                <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
-                  ETB 2k - 20k
-                </div>
-              </div>
-
-              <div className="text-left">
-                <p className="text-xs text-gray-500 mb-1">Location</p>
-                <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
-                  Addis Ababa
-                </div>
-              </div>
-
-              <Link to="/properties">
-                <button className="w-full h-full bg-[#087474] text-white rounded-lg font-medium hover:bg-[#066565] transition">
-                  Search
-                </button>
-              </Link>
-
+          <div className="lg:w-1/2">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <img
+                src={bgImage}
+                alt="hero"
+                className="w-full h-[420px] object-cover"
+              />
             </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* SEARCH */}
+      <div className="max-w-5xl mx-auto px-6 -mt-10 relative z-20">
+        <div className="bg-white rounded-2xl shadow-2xl p-5 border">
+          <div className="grid md:grid-cols-4 gap-3">
+
+            <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
+              For Rent
+            </div>
+
+            <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
+              ETB 2k - 20k
+            </div>
+
+            <div className="bg-gray-50 border rounded-lg px-3 py-2 text-sm">
+              Addis Ababa
+            </div>
+
+            <Link to="/properties">
+              <button className="w-full h-full bg-[#087474] text-white rounded-lg font-medium hover:bg-[#066565] transition">
+                Search
+              </button>
+            </Link>
+
           </div>
         </div>
       </div>
 
-      {/* PROPERTIES + MAP */}
+      {/* FEATURED */}
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
-            Properties For Rent
+
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-bold text-gray-800">
+            Featured Rentals
           </h2>
-          <p className="text-gray-500 mt-2">
-            Explore homes across Addis Ababa
-          </p>
+
+          <Link to="/properties" className="text-[#087474] font-medium hover:underline">
+            View all →
+          </Link>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          {forRentProperties.map((property) => (
+            <div
+              key={property.id}
+              className="bg-[#0b3d3d] text-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group"
+            >
+              <div className="relative h-40 overflow-hidden">
+                <img
+                  src={property.image}
+                  alt=""
+                  className="w-full h-full object-cover group-hover:scale-105 transition"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
 
-          {/* LEFT */}
-          <div className="lg:w-3/5 space-y-5">
-            {forRentProperties.map((property) => (
-              <div
-                key={property.id}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition flex overflow-hidden"
-              >
-                <div className="w-40 h-40 overflow-hidden">
-                  <img
-                    src={property.image}
-                    alt=""
-                    className="w-full h-full object-cover group-hover:scale-105 transition"
-                  />
+                <span className="absolute top-3 left-3 bg-[#087474] text-xs px-2 py-1 rounded-full">
+                  For Rent
+                </span>
+              </div>
+
+              <div className="p-4">
+                <h3 className="text-sm font-semibold">{property.title}</h3>
+
+                <p className="text-white/60 text-xs mt-1">
+                  📍 {property.location}
+                </p>
+
+                <div className="flex justify-between text-xs text-white/60 mt-2 border-b border-white/10 pb-2">
+                  <span>{property.bedrooms} Bed</span>
+                  <span>{property.bathrooms} Bath</span>
+                  <span>{property.area} m²</span>
                 </div>
 
-                <div className="flex-1 p-4 flex flex-col justify-between">
-                  <div>
-                    <div className="flex justify-between">
-                      <h3 className="font-semibold text-lg text-gray-800">
-                        {property.title}
-                      </h3>
-                      <span className="text-[#087474] font-bold">
-                        {property.price} ETB
-                      </span>
-                    </div>
+                <div className="flex justify-between items-center mt-3">
+                  <span className="text-lg font-bold">
+                    {property.price} ETB
+                  </span>
 
-                    <p className="text-gray-500 text-sm mt-1">
-                      📍 {property.location}
-                    </p>
-
-                    <div className="flex gap-4 text-sm text-gray-500 mt-3">
-                      <span>{property.bedrooms} Beds</span>
-                      <span>{property.bathrooms} Baths</span>
-                      <span>{property.area} m²</span>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="text-xs bg-[#087474]/10 text-[#087474] px-2 py-1 rounded-full">
-                      For Rent
-                    </span>
-
-                    <Link to={`/property/${property.id}`}>
-                      <button className="text-sm text-[#087474] font-medium hover:underline">
-                        View →
-                      </button>
-                    </Link>
-                  </div>
+                  <Link to={`/property/${property.id}`}>
+                    <button className="bg-[#fbbf24] text-black px-3 py-1.5 rounded-md text-xs font-semibold hover:scale-105 transition">
+                      View
+                    </button>
+                  </Link>
                 </div>
               </div>
-            ))}
-
-            <div className="text-center pt-6">
-              <Link to="/properties">
-                <button className="text-[#087474] font-semibold hover:underline">
-                  Browse All Rentals →
-                </button>
-              </Link>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
 
-          {/* RIGHT MAP */}
-          <div className="lg:w-2/5">
-            <div className="sticky top-28 bg-white p-3 rounded-2xl shadow-md border">
-              <Map />
-              <p className="text-xs text-gray-500 mt-3 text-center">
-                📍 Click markers to explore properties
+      {/* ABOUT SECTION (NEW) */}
+      <div className="bg-white py-16 border-t">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            About AddisNest
+          </h2>
+
+          <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+            AddisNest helps people in Ethiopia find rental homes quickly and safely.
+            We connect tenants directly with landlords through verified listings,
+            real photos, and clear pricing.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+
+            <div className="p-6 bg-gray-50 rounded-xl border">
+              <h3 className="font-semibold mb-2">🔍 Easy Search</h3>
+              <p className="text-sm text-gray-600">
+                Find homes by location, price, and type in seconds.
               </p>
             </div>
-          </div>
 
+            <div className="p-6 bg-gray-50 rounded-xl border">
+              <h3 className="font-semibold mb-2">✔ Verified Listings</h3>
+              <p className="text-sm text-gray-600">
+                We focus on real, up-to-date rental properties only.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gray-50 rounded-xl border">
+              <h3 className="font-semibold mb-2">📞 Direct Contact</h3>
+              <p className="text-sm text-gray-600">
+                Talk directly to landlords without middle delays.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      {/* HOW IT WORKS */}
-      <div className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-10">
-            How It Works
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {["Search", "View", "Contact"].map((step, i) => (
-              <div key={i} className="p-6">
-                <div className="w-16 h-16 bg-[#087474]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
-                  {i === 0 ? "🔍" : i === 1 ? "📋" : "✉️"}
-                </div>
-                <h3 className="font-semibold text-lg">{step}</h3>
-                <p className="text-gray-500 text-sm mt-2">
-                  {step === "Search" && "Find homes by location and price"}
-                  {step === "View" && "See full details and images"}
-                  {step === "Contact" && "Reach out to the owner instantly"}
-                </p>
-              </div>
-            ))}
-          </div>
+      {/* MAP */}
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="bg-white p-4 rounded-2xl shadow-md border">
+          <Map />
+          <p className="text-xs text-gray-500 mt-3 text-center">
+            📍 Click markers to explore properties
+          </p>
         </div>
       </div>
 
       {/* FOOTER */}
       <footer className="bg-[#0b3d3d] text-white py-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+
           <div>
             <h2 className="text-xl font-bold mb-3">AddisNest</h2>
             <p className="text-sm text-white/70">
@@ -269,6 +246,7 @@ export default function Home() {
               Addis Ababa, Ethiopia
             </p>
           </div>
+
         </div>
 
         <div className="text-center text-white/50 text-sm mt-8">
