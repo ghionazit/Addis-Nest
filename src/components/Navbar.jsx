@@ -36,6 +36,11 @@ export default function Navbar() {
             Properties
           </Link>
 
+          {/* NEW: Landlord Dashboard */}
+          <Link to="/landlord" className="relative group">
+            Landlord
+          </Link>
+
           {/* About (scrolls) */}
           <button
             onClick={handleScrollToAbout}
@@ -60,6 +65,7 @@ export default function Navbar() {
             </button>
           </Link>
         </div>
+
       </div>
     </nav>
   );
