@@ -91,13 +91,13 @@ export default function LandlordDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b3d3d] pt-16">
+    <div className="min-h-screen bg-white pt-16">
 
       {/* HEADER */}
       <div className="bg-white sticky top-0 z-20 shadow">
         <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold">🏠 Dashboard</h1>
+            <h1 className="text-3xl font-bold"> Dashboard</h1>
             <p className="text-sm text-gray-500">Manage properties</p>
           </div>
 
@@ -113,7 +113,7 @@ export default function LandlordDashboard() {
       <div className="h-4 bg-white" />
 
       {/* STATS */}
-      <div className="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-4 gap-6">
+      <div className="max-w-7xl  mx-auto px-4 py-8 grid md:grid-cols-4 gap-6">
         <Stat title="Total" value={stats.total} icon="🏘️" />
         <Stat title="Available" value={stats.available} icon="✅" />
         <Stat title="Rented" value={stats.rented} icon="🔑" />
@@ -170,10 +170,10 @@ export default function LandlordDashboard() {
 
 function Stat({ title, value, icon }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow flex justify-between">
+    <div className="bg-[#0b3d3d] p-6 rounded-lg shadow flex justify-between">
       <div>
-        <p className="text-sm text-gray-500">{title}</p>
-        <p className="text-xl font-bold">{value}</p>
+        <p className="text-sm text-white ">{title}</p>
+        <p className="text-xl text-white font-bold">{value}</p>
       </div>
       <span className="text-2xl">{icon}</span>
     </div>
@@ -232,8 +232,8 @@ function PropertyCard({ p, onDelete, onToggle, onEdit }) {
 
 function Empty({ onAdd }) {
   return (
-    <div className="bg-white p-10 text-center rounded-lg shadow">
-      <h2 className="text-xl font-bold mb-3">No Properties</h2>
+    <div className="bg-[#0b3d3d] p-10 text-center rounded-lg shadow">
+      <h2 className="text-xl text-white font-bold mb-3">No Properties</h2>
       <button
         onClick={onAdd}
         className="bg-[#fbbf24] px-5 py-2 rounded"
